@@ -22,5 +22,3 @@ fn main() {
 // beardbolt-demangle: t
 // beardbolt-disassemble: nil
 // End:
-
-
