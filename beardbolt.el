@@ -780,7 +780,7 @@ With prefix argument, choose from starter files in `bb-starter-files'."
   (add-hook 'kill-buffer-hook #'bb-clear-rainbow-overlays nil t)
   (add-hook 'post-command-hook #'bb--synch-relation-overlays nil t)
   (setq truncate-lines t)
-  (read-only-mode t)
+  (view-mode t)
   (buffer-disable-undo)
   (local-set-key (kbd "q") 'quit-window))
 
