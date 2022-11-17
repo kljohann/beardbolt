@@ -596,7 +596,8 @@ determine LANG from `major-mode'."
                (when unsafe-vars
                  (message "[beardbolt] Some variables unsafe %s" unsafe-vars))
                (when risky-vars
-                 (message "[beardbolt] Some variables risky %s" risky-vars)))))
+                 (message "[beardbolt] Some variables risky %s" risky-vars))
+               nil)))
     (hack-local-variables))
   (let* ((dump-file (make-temp-file "beardbolt-dump-" nil
                                     (concat "." (file-name-extension buffer-file-name))))
