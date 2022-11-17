@@ -115,7 +115,10 @@ If nil, auto-recompilation is off.")
 Used to work around inconsistencies in alternative shells.")
 
 (defun bb--sandbox-dir ()
-  (let ((d (expand-file-name "beardbolt-sandbox" user-emacs-directory)))
+  (let ((d (cond ((fboundp 'no-littering-expand-etc-file-name)
+                  (no-littering-expand-etc-file-name "beardbolt"))
+                 (t (expand-file-name "beardbolt-sandbox"
+                                      user-emacs-directory)))))
     (make-directory d 'parents)
     d))
 
