@@ -119,7 +119,7 @@ Used to work around inconsistencies in alternative shells.")
     (make-directory d 'parents)
     d))
 
-(defvar bb-dir (file-name-directory load-file-name)
+(defvar bb-dir (file-name-directory (or load-file-name buffer-file-name))
   "The directory which beardbolt is installed to.")
 
 (defvar-local bb-objdump-binary "objdump"
