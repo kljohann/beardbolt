@@ -52,7 +52,7 @@
 (bb--defoption bb-disassemble nil
   "Non-nil to assemble then disassemble an output binary."
   :type 'boolean :safe 'booleanp)
-(bb--defoption bb-asm-format 'att
+(bb--defoption bb-asm-format 'intel
   "Which output assembly format to use.
 Passed directly to compiler or disassembler."
   :type 'string :safe (lambda (v) (or (null v) (symbolp v) (stringp v))))
@@ -774,7 +774,7 @@ With prefix argument, choose from starter files in `bb-starter-files'."
     (remove-hook 'after-change-functions #'bb--after-change t)
     (remove-hook 'post-command-hook #'bb--synch-relation-overlays t))))
 
-(define-derived-mode bb--asm-mode asm-mode "⚡asm ⚡"
+(define-derived-mode bb--asm-mode nasm-mode "⚡asm ⚡"
   "Toggle `bearbolt--output-mode', internal mode for asm buffers."
   (add-hook 'kill-buffer-hook #'bb-clear-rainbow-overlays nil t)
   (add-hook 'post-command-hook #'bb--synch-relation-overlays nil t)
