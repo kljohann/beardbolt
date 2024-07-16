@@ -31,11 +31,12 @@
 
 (require 'cl-lib)
 (eval-when-compile (require 'subr-x))
-(require 'map)
+(require 'color)
 (require 'compile)
 (require 'disass)
 (require 'json)
-(require 'color)
+(require 'map)
+(require 'nasm-mode)
 (require 'pulse)
 
 ;;; Code:
